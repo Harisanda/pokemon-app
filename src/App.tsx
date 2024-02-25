@@ -1,6 +1,5 @@
 import React, {FunctionComponent} from 'react';
 import {BrowserRouter as Router , Link, Switch, Route} from 'react-router-dom';
-import PokemonForm from './components/PokemonForm';
 import PageNotFound from './pages/PageNotFount';
 import PokemonsDetail from './pages/PokemonDetails';
 import PokemonEdit from './pages/PokemonEdit';
@@ -21,7 +20,7 @@ const App: FunctionComponent = () => {
          <Switch>
             <Route exact path="/" component={PokemonList}/>
             <Route exact path="/pokemons" component={PokemonList}/>
-            <Route path="/pokemons/:id" component={PokemonsDetail}/>
+            <Route exact path="/pokemons/:id" component={PokemonsDetail}/>
             <Route exact path="/pokemons/edit/:id" component={PokemonEdit}/>
             <Route component={PageNotFound}/>
          </Switch>
